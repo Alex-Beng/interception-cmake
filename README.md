@@ -1,3 +1,28 @@
+# Interception CMake wrapper
+
+use like this:
+
+```cmake
+message(STATUS "Third-party: creating target 'interception'")
+
+include(FetchContent)
+FetchContent_Declare(
+    interception
+    GIT_REPOSITORY https://github.com/Alex-Beng/interception-cmake.git
+    GIT_TAG main
+    GIT_SHALLOW FALSE
+)
+FetchContent_MakeAvailable(interception)
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+add_executable(interception_test interception_test.cpp)
+target_link_libraries(interception_test interception)
+```
+
+
+
+# Original README.md
+
 Interception
 ============
 
