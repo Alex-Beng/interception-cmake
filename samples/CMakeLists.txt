@@ -12,7 +12,6 @@ foreach(SAMPLE_SRC ${SAMPLE_SOURCES})
     add_executable(${SAMPLE_NAME} ${SAMPLE_SRC} utils.c)
     target_link_libraries(${SAMPLE_NAME} interception)
     
-    install(TARGETS ${SAMPLE_NAME} DESTINATION bin)
 endforeach(SAMPLE_SRC )
 
 
