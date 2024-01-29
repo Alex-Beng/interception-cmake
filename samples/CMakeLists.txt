@@ -10,7 +10,7 @@ foreach(SAMPLE_SRC ${SAMPLE_SOURCES})
     get_filename_component(SAMPLE_NAME ${SAMPLE_SRC} NAME_WE)
 
     add_executable(${SAMPLE_NAME} ${SAMPLE_SRC} utils.c)
-    target_link_libraries(${SAMPLE_NAME} interception)
+    target_link_libraries(${SAMPLE_NAME} PRIVATE interception)
     
 endforeach(SAMPLE_SRC )
 
