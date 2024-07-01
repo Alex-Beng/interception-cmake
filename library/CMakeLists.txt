@@ -1,6 +1,12 @@
-add_library(interception SHARED interception.c)
+add_library(interception interception.c)
 target_include_directories(interception PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-install(TARGETS interception LIBRARY DESTINATION lib)
-install(TARGETS interception LIBRARY DESTINATION bin)
-install(FILES interception.h DESTINATION include)
-install(TARGETS interception LIBRARY DESTINATION  ${CMAKE_BINARY_DIR}/bin)
+
+set_target_properties(interception PROPERTIES
+    PUBLIC_HEADER interception.h
+)
+
+install(TARGETS interception
+    ARCHIVE DESTINATION lib
+    LIBRARY DESTINATION lib
+    PUBLIC_HEADER DESTINATION include
+)
